@@ -1,0 +1,19 @@
+{
+  "name": "@jev/api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Promesómetro API: judges political text with Jev and serves the web app",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.0",
+    "@jev/decide": "workspace:*",
+    "@jev/rhetoric": "workspace:*",
+    "hono": "^4.7.0"
+  }
+}

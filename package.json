@@ -2,7 +2,7 @@
   "name": "jev",
   "private": true,
   "type": "module",
-  "description": "Typed, confidence-aware decisions for AIDA built on TypeSafe's Jev model",
+  "description": "Promesómetro: acta de concreción del discurso político, juzgada por Jev (TypeSafe AI)",
   "packageManager": "pnpm@10.33.0",
   "engines": {
     "node": ">=20"
@@ -13,7 +13,10 @@
     "test": "vitest run",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
-    "example:route": "tsx examples/route-capability.ts"
+    "example:route": "tsx examples/route-capability.ts",
+    "start": "node apps/api/dist/server.js",
+    "dev:api": "pnpm --filter @jev/api dev",
+    "dev:web": "pnpm --filter @jev/web dev"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.0",

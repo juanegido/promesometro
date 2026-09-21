@@ -4,8 +4,14 @@
     "noEmit": true,
     "paths": {
       "@jev/decide": ["./packages/decide/src/index.ts"],
-      "@jev/capability-router": ["./packages/capability-router/src/index.ts"]
+      "@jev/capability-router": ["./packages/capability-router/src/index.ts"],
+      "@jev/rhetoric": ["./packages/rhetoric/src/index.ts"]
     }
   },
-  "include": ["examples/**/*.ts", "vitest.config.ts", "packages/*/src/**/*.test.ts"]
+  "include": [
+    "examples/**/*.ts",
+    "vitest.config.ts",
+    "packages/*/src/**/*.test.ts",
+    "apps/api/src/**/*.test.ts"
+  ]
 }

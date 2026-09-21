@@ -1,0 +1,11 @@
+{
+  "id": "ejemplo-sintetico-programa",
+  "title": "Programa de ejemplo (sintético)",
+  "author": "Partido ficticio de demostración",
+  "country": "—",
+  "date": "2026-01-01",
+  "kind": "sintetico",
+  "source": "https://github.com/juanegido/jev/blob/main/corpus/ejemplo-sintetico-programa.json",
+  "note": "Texto inventado para mostrar la rúbrica. No corresponde a ningún partido ni persona real.",
+  "text": "Creemos en un país donde el esfuerzo se premie y nadie se quede atrás. Nuestra historia es la de una nación que siempre se levanta.\n\nEconomía. Bajaremos el IVA de los alimentos básicos del 10% al 4% en los primeros cien días de gobierno, por decreto. Reduciremos el gasto superfluo de la administración. Trabajaremos por un modelo productivo más moderno. El gobierno saliente deja las cuentas públicas en su peor momento en veinte años.\n\nVivienda. Construiremos 20.000 viviendas de alquiler asequible en cuatro años a través de la empresa pública de suelo. Apostamos por un mercado del alquiler más justo. Prohibiremos los desahucios de familias vulnerables sin alternativa habitacional.\n\nSeguridad. Defenderemos la seguridad de nuestros barrios con firmeza, caiga quien caiga. Contrataremos 5.000 agentes de policía en la legislatura. Los que han permitido el caos en las calles tendrán que rendir cuentas.\n\nInstituciones. Aprobaremos una ley de transparencia en el primer año. Nadie está por encima de la ley. Impulsaremos una regeneración democrática profunda.\n\nSalud. Trabajaremos por una sanidad pública de calidad, con menos listas de espera. Destinaremos el 7% del PIB a sanidad antes de 2030.\n\nGracias a todos por acompañarnos en este camino. Juntos vamos a cambiar este país."
+}

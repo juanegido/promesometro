@@ -1,0 +1,25 @@
+{
+  "name": "@jev/rhetoric",
+  "version": "0.1.0",
+  "description": "Rubrics, segmentation and aggregation for measuring how concrete political text is, judged by Jev",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@jev/decide": "workspace:*",
+    "@typesafe-ai/sdk": "^0.6.0"
+  }
+}

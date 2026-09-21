@@ -28,7 +28,7 @@ const RX = {
   intencion:
     /\b(trabajar(emos|é) por|apostar(emos|é) por|defender(emos|é)|impulsar(emos|é)|promover(emos|é)|fortalecer(emos|é)|luchar(emos|é)|apoyar(emos|é)|avanzar(emos|é)|queremos|creemos en|nuestro compromiso|comprometidos con)\b/i,
   ataque:
-    /\b(corrupt[oa]s?|mentiros[oa]s?|fracas[oa]|desastre|casta|élite|traidor|enemigo|ilegítim[oa]|fraude|dictadura|tiran[oía]|incompetente|vergüenza|saque[oó]|robaron)\b/i,
+    /\b(corrupt\w*|mentiros\w*|fracas\w*|desastre|casta|élite|traidor\w*|enemig\w*|ilegítim\w*|fraude|dictadura|tiran\w*|incompetente\w*|vergüenza|saque\w*|robar\w*|robaron|ruina|inútil\w*)\b/i,
   diagnostico:
     /\b(hoy|actualmente|el país|la situación|tenemos|hay|existe|sufre|padece|crisis|datos|según)\b/i,
   relleno:
@@ -45,9 +45,9 @@ const RX = {
 
 const TEMA_RX: Record<string, RegExp> = {
   economia:
-    /impuesto|fiscal|iva|empleo|salari|sueldo|deuda|déficit|inflaci|industria|comercio|econom|pib|empresa|autónomo|arancel|gasto|presupuest/i,
+    /impuesto|fiscal|irpf|renta|iva\b|empleo|salari|sueldo|deuda|déficit|inflaci|industria|comercio|econom|pib|empresa|autónomo|arancel|gasto|presupuest/i,
   seguridad:
-    /crimen|delincuen|polic|militar|ejército|cárcel|prisión|narco|seguridad|pandilla|homicid|orden público/i,
+    /crimen|delincuen|polic|militar|ejército|cárcel|prisión|narco|segur|pandilla|homicid|orden público|inseguridad/i,
   salud: /salud|sanidad|hospital|médic|medicamento|enfermer|eps|sanitari/i,
   educacion: /educaci|escuela|colegio|universidad|docente|maestr|becas?|ciencia|investigaci/i,
   vivienda: /vivienda|alquiler|hipoteca|suelo|urbanis|casa propia|inquilin/i,

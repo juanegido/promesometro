@@ -51,6 +51,17 @@ describe("heuristic rubric", () => {
     );
     expect(tipoOf("Muchas gracias a todos por venir.")).toBe("relleno");
     expect(tipoOf("Aprobaremos una ley de transparencia.")).toBe("compromiso");
+    expect(tipoOf("Los que gobernaron antes son unos incompetentes que saquearon las arcas.")).toBe(
+      "ataque",
+    );
+  });
+});
+
+describe("temaOf", () => {
+  it("maps fiscal and safety vocabulary", async () => {
+    const { temaOf } = await import("./index.js");
+    expect(temaOf("Reduciremos el IRPF a las rentas medias.")).toBe("economia");
+    expect(temaOf("Trabajaremos por barrios más seguros.")).toBe("seguridad");
   });
 });
 

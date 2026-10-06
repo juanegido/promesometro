@@ -1,0 +1,37 @@
+[
+  {
+    "id": "trump",
+    "nombre": "Donald Trump",
+    "cargo": "Presidente de los Estados Unidos",
+    "pais": "US",
+    "lang": "en"
+  },
+  {
+    "id": "sanchez",
+    "nombre": "Pedro Sánchez",
+    "cargo": "Presidente del Gobierno de España",
+    "pais": "ES",
+    "lang": "es"
+  },
+  {
+    "id": "bukele",
+    "nombre": "Nayib Bukele",
+    "cargo": "Presidente de El Salvador",
+    "pais": "SV",
+    "lang": "es"
+  },
+  {
+    "id": "petro",
+    "nombre": "Gustavo Petro",
+    "cargo": "Expresidente de Colombia (2022-2026)",
+    "pais": "CO",
+    "lang": "es"
+  },
+  {
+    "id": "abelardo",
+    "nombre": "Abelardo de la Espriella",
+    "cargo": "Abogado y político colombiano",
+    "pais": "CO",
+    "lang": "es"
+  }
+]

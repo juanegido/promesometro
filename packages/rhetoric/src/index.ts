@@ -7,6 +7,22 @@ export {
   summarize,
 } from "./analyze.js";
 export {
+  deltaFor,
+  type Figura,
+  type FiguraDelta,
+  type FiguraMetrics,
+  type Formato,
+  type FraseDestacada,
+  humoDelDia,
+  inWindow,
+  latestDate,
+  METRICAS,
+  metricsFor,
+  NIVEL_ETIQUETA,
+  shiftDate,
+  type TextoMeta,
+} from "./figuras.js";
+export {
   concrecionLevel,
   HEURISTIC_ENGINE,
   HeuristicDecider,

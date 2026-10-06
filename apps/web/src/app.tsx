@@ -5,10 +5,15 @@ import { path } from "./router.js";
 import { Analizar } from "./views/Analizar.jsx";
 import { AntesDespues } from "./views/AntesDespues.jsx";
 import { CorpusEntry, CorpusList } from "./views/Corpus.jsx";
+import { Figura } from "./views/Figura.jsx";
+import { Frase } from "./views/Frase.jsx";
+import { Leaderboard } from "./views/Leaderboard.jsx";
 import { Metodo } from "./views/Metodo.jsx";
+import { Texto } from "./views/Texto.jsx";
 
 const NAV = [
-  ["/", "Analizar"],
+  ["/", "Ranking"],
+  ["/analizar", "Analizar"],
   ["/antes-despues", "Antes y después"],
   ["/corpus", "Corpus"],
   ["/metodo", "Método"],
@@ -16,8 +21,15 @@ const NAV = [
 
 function View() {
   const p = path.value;
-  if (p === "/") return <Analizar />;
+  if (p === "/") return <Leaderboard />;
+  if (p === "/analizar") return <Analizar />;
   if (p.startsWith("/acta/")) return <Analizar hash={p.slice(6)} key={p} />;
+  if (p.startsWith("/figura/")) return <Figura id={p.slice(8)} key={p} />;
+  if (p.startsWith("/texto/")) return <Texto id={p.slice(7)} key={p} />;
+  if (p.startsWith("/frase/")) {
+    const [textoId, n] = p.slice(7).split("/");
+    if (textoId && n !== undefined) return <Frase textoId={textoId} n={Number(n)} key={p} />;
+  }
   if (p === "/antes-despues") return <AntesDespues />;
   if (p === "/corpus") return <CorpusList />;
   if (p.startsWith("/corpus/")) return <CorpusEntry id={p.slice(8)} />;
@@ -26,7 +38,7 @@ function View() {
     <section class="hero">
       <h1>No hay nada aquí.</h1>
       <p>
-        <a href="/">Volver a levantar un acta.</a>
+        <a href="/analizar">Volver a levantar un acta.</a>
       </p>
     </section>
   );
@@ -42,7 +54,9 @@ export function App() {
   }, []);
   const current = path.value;
   const active = (href: string) =>
-    href === "/" ? current === "/" || current.startsWith("/acta/") : current.startsWith(href);
+    href === "/analizar"
+      ? current === "/analizar" || current.startsWith("/acta/")
+      : current === href;
   return (
     <div class="wrap">
       <header class="mast">

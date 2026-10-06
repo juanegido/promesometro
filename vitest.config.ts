@@ -4,6 +4,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "@jev/decide": new URL("./packages/decide/src/index.ts", import.meta.url).pathname,
+      "@jev/rhetoric/figuras": new URL("./packages/rhetoric/src/figuras.ts", import.meta.url)
+        .pathname,
       "@jev/rhetoric": new URL("./packages/rhetoric/src/index.ts", import.meta.url).pathname,
       "@jev/capability-router": new URL(
         "./packages/capability-router/src/index.ts",

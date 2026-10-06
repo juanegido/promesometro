@@ -370,6 +370,10 @@ textarea {
   font-size: 13px;
   line-height: 1.2;
 }
+.stamp.neutral {
+  border-color: var(--ink);
+  color: var(--ink);
+}
 .stamp strong {
   display: block;
   font-size: 30px;
@@ -582,6 +586,168 @@ details.raw pre {
   color: var(--red);
 }
 
+/* Corpus rows that need more than one link (title + external source) */
+.corpus-row {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 14px;
+  padding: 14px 0;
+  align-items: baseline;
+}
+.corpus-row .t {
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.corpus-row .t:hover {
+  text-decoration: underline;
+}
+
+/*
+ * A figure's list of textos. Deliberately its own class, not `.corpus`: `.corpus a`
+ * (above) targets every anchor under `.corpus`, including a nested title link, and would
+ * turn that link itself into a 90px-wide grid container (one word per line). This list's
+ * only anchors are the title and the external source link, laid out directly by `.texto-row`.
+ */
+.textos {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  border-top: 1px solid var(--ink);
+}
+.texto-row {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 14px;
+  padding: 14px 0;
+  align-items: baseline;
+  border-bottom: 1px solid var(--rule);
+}
+.texto-fecha {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+.texto-main {
+  display: block;
+}
+.texto-titulo {
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.texto-titulo:hover {
+  text-decoration: underline;
+}
+.texto-meta {
+  display: block;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.texto-fuente {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--red);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Leaderboard */
+.board-wrap {
+  overflow-x: auto;
+  margin: 16px 0;
+}
+.board {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+.board th {
+  text-align: left;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 400;
+  border-bottom: 1px solid var(--ink);
+  padding: 8px 10px;
+  white-space: nowrap;
+}
+.board th:first-child,
+.board td:first-child {
+  width: 34px;
+  color: var(--muted);
+}
+.board td {
+  border-bottom: 1px solid var(--rule);
+  padding: 12px 10px;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.board td:nth-child(2) {
+  white-space: normal;
+  font-family: var(--serif);
+  font-size: 16px;
+}
+.board tbody tr {
+  cursor: pointer;
+}
+.board tbody tr:hover {
+  background: var(--paper-2);
+}
+.board tbody tr:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: -2px;
+}
+.delta {
+  font-size: 11px;
+  margin-left: 2px;
+}
+.delta.up {
+  color: var(--red);
+}
+.delta.down {
+  color: #2e8b57;
+}
+
+/* Humo del día */
+.humo-card {
+  border-left: 4px solid var(--red);
+  padding: 10px 0 10px 16px;
+  margin: 20px 0;
+}
+.humo-card h3 {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin: 0 0 10px;
+  font-weight: 400;
+}
+.frase-quote {
+  font-family: var(--serif);
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+
+/* Frase */
+.frase-big {
+  font-family: var(--serif);
+  font-size: 34px;
+  line-height: 1.3;
+  margin: 20px 0;
+  max-width: var(--measure);
+}
+.share-row {
+  margin-top: 16px;
+}
+
 /* Método */
 .method h2 {
   font-size: 26px;
@@ -679,9 +845,14 @@ footer {
   .verdict-big {
     grid-template-columns: 1fr;
   }
-  .corpus a {
+  .corpus a,
+  .corpus-row,
+  .texto-row {
     grid-template-columns: 1fr;
     gap: 4px;
+  }
+  .texto-fuente {
+    white-space: normal;
   }
   .mast nav {
     gap: 12px;

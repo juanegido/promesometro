@@ -115,7 +115,7 @@ export function Analizar({ hash }: { hash?: string }) {
       {verdict && (
         <>
           <div class="actions" style={{ marginTop: 22 }}>
-            <a class="btn ghost" href="/" onClick={() => setVerdict(null)}>
+            <a class="btn ghost" href="/analizar" onClick={() => setVerdict(null)}>
               ← Nueva acta
             </a>
             <span class="hint">Pulsa una frase para ver su nota al margen.</span>

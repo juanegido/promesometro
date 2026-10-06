@@ -1,4 +1,13 @@
-import type { CompareVerdict, DocumentVerdict } from "@jev/rhetoric";
+import type {
+  CompareVerdict,
+  DocumentVerdict,
+  Figura,
+  FiguraDelta,
+  FiguraMetrics,
+  FraseDestacada,
+  Resumen,
+  TextoMeta,
+} from "@jev/rhetoric";
 
 export interface CorpusMeta {
   id: string;
@@ -21,6 +30,41 @@ export interface Method {
   TONO: readonly string[];
   MOVIMIENTO: Record<string, string>;
   CONSISTENCIA: readonly string[];
+  METRICAS: Record<string, string>;
+}
+
+export type FiguraConMetrics = Figura & {
+  metrics: FiguraMetrics;
+  delta: FiguraDelta;
+  ultimoTexto: string | null;
+};
+
+export interface FigurasResponse {
+  hasta: string | null;
+  ventanaDias: number;
+  figuras: FiguraConMetrics[];
+}
+
+export interface FiguraDetalle {
+  figura: Figura;
+  metrics: FiguraMetrics;
+  delta: FiguraDelta;
+  textos: (TextoMeta & { palabras: number; resumen: Resumen })[];
+}
+
+export interface TextoDetalle {
+  texto: TextoMeta & { text: string };
+  figura: Figura;
+  verdict: DocumentVerdict;
+}
+
+export type FraseDestacadaOut = FraseDestacada & { figuraNombre: string };
+
+export interface HumoResponse {
+  fecha: string | null;
+  humo: FraseDestacadaOut | null;
+  beligerante: FraseDestacadaOut | null;
+  medible: FraseDestacadaOut | null;
 }
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
@@ -47,4 +91,8 @@ export const api = {
   corpus: () => call<CorpusMeta[]>("/api/corpus"),
   corpusEntry: (id: string) =>
     call<{ entry: CorpusMeta & { text: string }; verdict: DocumentVerdict }>(`/api/corpus/${id}`),
+  figuras: () => call<FigurasResponse>("/api/figuras"),
+  figura: (id: string) => call<FiguraDetalle>(`/api/figuras/${id}`),
+  texto: (id: string) => call<TextoDetalle>(`/api/textos/${id}`),
+  humo: () => call<HumoResponse>("/api/humo"),
 };

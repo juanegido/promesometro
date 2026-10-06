@@ -7,5 +7,6 @@ pnpm monorepo, TypeScript strict (`exactOptionalPropertyTypes`, `noUncheckedInde
 - La rúbrica vive sólo en `packages/rhetoric/src/questions.ts`. La página Método la lee de `/api/method`. No dupliques los textos de la rúbrica en el frontend.
 - Jev SDK: `@typesafe-ai/sdk`. Preguntas `noul`, `choice` y `score`; los tipos de respuesta se infieren de las preguntas, mantén genéricos `const`.
 - Corpus: ningún texto sin `source`. Un texto `sintetico` no lleva autor real. Nunca redactes citas atribuidas a personas reales.
+- `corpus/figuras/` guarda textos oficiales de figuras públicas, siempre literales y con `source`; se cargan con `pnpm ingest`. Nunca redactes ni parafrasees texto atribuido a una persona real.
 - La red de las sesiones remotas bloquea typesafe.ai; la referencia de la API es el `.d.ts` del SDK en `node_modules`.
 - Antes de commit: `pnpm lint:fix && pnpm typecheck && pnpm test`. Para ver la app: `pnpm build && pnpm start`.
